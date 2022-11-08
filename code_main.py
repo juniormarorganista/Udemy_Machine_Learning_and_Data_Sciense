@@ -143,13 +143,15 @@ X_credit_treinamento, X_credit_teste, Y_credit_treinamento, Y_credit_teste = tra
 
 print(X_credit_teste.shape,Y_credit_teste.shape)
 
+X_census_treinamento, X_census_teste, Y_census_treinamento, Y_census_teste = train_test_split(X_census,Y_census,test_size=0.15,random_state=0)
 
+X_census_teste.shape,Y_census_teste.shape
 
+with open('credit.pkl',mode='wb') as f:
+  pickle.dump([X_credit_treinamento, Y_credit_treinamento,X_credit_teste, Y_credit_teste],f)
 
-
-
-
-
+with open('census.pkl',mode='wb') as f:
+  pickle.dump([X_census_treinamento, Y_census_treinamento,X_census_teste, Y_census_teste],f)
 
 
 
